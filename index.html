@@ -21,8 +21,62 @@
       <title>World Clock</title>
    </head>
    <body>
-      <h1>World Clock</h1>
-      <footer>
+      <header class="app-header wrap">
+         <h1 class="brand">World Clock</h1>
+
+         <label class="sr-only" for="city-select">Select a City...</label>
+         <select id="city-select" aria-disabled="true">
+            <option value="">Select a City...</option>
+            <option value="los_angeles">Los Angeles</option>
+            <option value="sydney">Sydney</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="paris">Paris</option>
+         </select>
+      </header>
+
+      <main class="wrap" id="rows">
+         <section class="row" data-zone="America/Los_Angeles">
+            <div>
+               <div class="city">
+                  Los Angeles <span class="flag" aria-hidden="true">🇺🇸</span>
+               </div>
+               <div class="date">August 15, 2025</div>
+            </div>
+            <div class="time">1:48:15<span class="ampm">AM</span></div>
+         </section>
+
+         <section class="row" data-zone="Australia/Sydney">
+            <div>
+               <div class="city">
+                  Sydney <span class="flag" aria-hidden="true">🇦🇺</span>
+               </div>
+               <div class="date">August 15, 2025</div>
+            </div>
+            <div class="time">6:48:15<span class="ampm">PM</span></div>
+         </section>
+
+         <section class="row" data-zone="Asia/Tokyo">
+            <div>
+               <div class="city">
+                  Tokyo <span class="flag" aria-hidden="true">🇯🇵</span>
+               </div>
+               <div class="date">August 15, 2025</div>
+            </div>
+            <div class="time">4:48:15<span class="ampm">PM</span></div>
+         </section>
+
+         <section class="row" data-zone="Europe/Paris">
+            <div>
+               <div class="city">
+                  Paris <span class="flag" aria-hidden="true">🇫🇷</span>
+               </div>
+               <div class="date">August 15, 2025</div>
+            </div>
+            <div class="time">10:48:15<span class="ampm">AM</span></div>
+         </section>
+      </main>
+
+      <footer class="wrap footer">
          Coded by
          <a href="https://github.com/di-legorreta" target="_blank"
             >Diana Legorreta</a
