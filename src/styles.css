@@ -1,8 +1,8 @@
 :root {
-   --screen: #ffe8f3; /* pale marshmallow pink */
-   --panel: #ffd3e7; /* soft candy panel */
-   --bezel: #ff9cc8; /* saturated pink border */
-   --ink: #703a5a; /* cocoa-berry text */
+   --screen: #ffe8f3;
+   --panel: #ffd3e7;
+   --bezel: #ff9cc8;
+   --ink: #703a5a;
 
    --shadow-deep: #d38bb0;
    --shadow-panel: #f6a9cb;
