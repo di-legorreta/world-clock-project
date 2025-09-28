@@ -1,4 +1,21 @@
+:root {
+   --screen: #ffe8f3; /* pale marshmallow pink */
+   --panel: #ffd3e7; /* soft candy panel */
+   --bezel: #ff9cc8; /* saturated pink border */
+   --ink: #703a5a; /* cocoa-berry text */
+
+   --shadow-deep: #d38bb0;
+   --shadow-panel: #f6a9cb;
+}
+
 html,
 body {
    height: 100%;
+}
+
+body {
+   margin: 0;
+   background: linear-gradient(180deg, #fff4fb, #ffe9f5), var(--screen);
+   color: var(--ink);
+   font: 14px/1.35 "Press Start 2P", monospace;
 }
