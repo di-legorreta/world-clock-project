@@ -51,7 +51,7 @@ a {
 #city-select {
    font: inherit;
    color: var(--ink);
-   background: var(--panel);
+   background: linear-gradient(180deg, #ffe5f2, #ffd6e9);
    border: 6px solid var(--bezel);
    border-radius: 8px;
    padding: 8px 10px;
