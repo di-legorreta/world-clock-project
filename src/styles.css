@@ -19,3 +19,7 @@ body {
    color: var(--ink);
    font: 14px/1.35 "Press Start 2P", monospace;
 }
+
+a {
+   color: var(--bezel);
+}
