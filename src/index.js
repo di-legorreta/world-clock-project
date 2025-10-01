@@ -1,17 +1,36 @@
-function updateLosAngelesTime() {
-   //Los angeles
-   const losAngEl = document.querySelector("#los-angeles");
-   const losAngDateEl = losAngEl.querySelector(".date");
-   const losAngTimeEl = losAngEl.querySelector(".time");
-   const losAngTime = moment().tz("America/Los_Angeles");
+function renderCity(sectionId, timezone) {
+   const section = document.querySelector("#" + sectionId);
+   if (!sectionId) return;
 
-   losAngDateEl.innerHTML = moment().format("MMMM Do YYYY");
-   losAngTimeEl.innerHTML = `${losAngTime.format(
-      "h:mm:ss"
-   )} <span class="ampm">${losAngTime.format("A")}</span>`;
+   const dateEl = section.querySelector(".date");
+   const timeEl = section.querySelector(".time");
+   const cityTime = moment().tz(timezone);
+
+   dateEl.textContent = cityTime.format("MMMM Do YYYY");
+   timeEl.innerHTML =
+      cityTime.format("h:mm:ss") +
+      ' <span class="ampm">' +
+      cityTime.format("A") +
+      "</span>";
 }
 
-setInterval(updateLosAngelesTime, 1000);
+function refreshClocks() {
+   renderCity("los-angeles", "America/Los_Angeles");
+   renderCity("sydney", "Australia/Sydney");
+   renderCity("tokyo", "Asia/Tokyo");
+   renderCity("paris", "Europe/Paris");
+}
+
+//Los angeles
+const losAngEl = document.querySelector("#los-angeles");
+const losAngDateEl = losAngEl.querySelector(".date");
+const losAngTimeEl = losAngEl.querySelector(".time");
+const losAngTime = moment().tz("America/Los_Angeles");
+
+losAngDateEl.innerHTML = losAngTime.format("MMMM Do YYYY");
+losAngTimeEl.innerHTML = `${losAngTime.format(
+   "h:mm:ss"
+)} <span class="ampm">${losAngTime.format("A")}</span>`;
 
 //Paris
 const parisEl = document.querySelector("#paris");
@@ -45,3 +64,6 @@ tokyoDateEl.innerHTML = tokyoTime.format("MMMM Do YYYY");
 tokyoTimeEl.innerHTML = `${tokyoTime.format(
    "h:mm:ss"
 )} <span class="ampm">${tokyoTime.format("A")}</span>`;
+
+refreshClocks();
+setInterval(refreshClocks, 1000);
