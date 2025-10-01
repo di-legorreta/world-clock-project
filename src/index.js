@@ -1,6 +1,6 @@
 function renderCity(sectionId, timezone) {
    const section = document.querySelector("#" + sectionId);
-   if (!sectionId) return;
+   if (!section) return;
 
    const dateEl = section.querySelector(".date");
    const timeEl = section.querySelector(".time");
@@ -70,7 +70,7 @@ function updateCity(event) {
    const cleanName = citytimeZone.replace("_", " ").split("/")[1];
    const citytimeEl = moment().tz(citytimeZone);
    const replacecityEl = document.querySelector("#rows");
-   replacecityEl.innerHTML = `<section class="row">
+   replacecityEl.innerHTML = `<section class="row" id="selected-city">
             <div>
                <div class="city">
                   ${cleanName}<span class="flag" aria-hidden="true">🇺🇸</span>
