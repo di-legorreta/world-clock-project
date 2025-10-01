@@ -77,7 +77,7 @@ function updateCity(event) {
    replacecityEl.innerHTML = `<section class="row" id="selected-city">
             <div>
                <div class="city">
-                  ${cleanName}<span class="flag" aria-hidden="true">🇺🇸</span>
+                  ${cleanName}
                </div>
                <div class="date">${citytimeEl.format("MMMM Do YYYY")}</div>
             </div>
