@@ -65,5 +65,26 @@ tokyoTimeEl.innerHTML = `${tokyoTime.format(
    "h:mm:ss"
 )} <span class="ampm">${tokyoTime.format("A")}</span>`;
 
+function updateCity(event) {
+   const citytimeZone = event.target.value;
+   const cleanName = citytimeZone.replace("_", " ").split("/")[1];
+   const citytimeEl = moment().tz(citytimeZone);
+   const replacecityEl = document.querySelector("#rows");
+   replacecityEl.innerHTML = `<section class="row">
+            <div>
+               <div class="city">
+                  ${cleanName}<span class="flag" aria-hidden="true">🇺🇸</span>
+               </div>
+               <div class="date">${citytimeEl.format("MMMM Do YYYY")}</div>
+            </div>
+            <div class="time">${citytimeEl.format(
+               "h:mm:ss"
+            )}<span class="ampm">${citytimeEl.format("A")}</span></div>
+         </section>`;
+}
+
+const citySelectEl = document.querySelector("#city-select");
+citySelectEl.addEventListener("change", updateCity);
+
 refreshClocks();
 setInterval(refreshClocks, 1000);
