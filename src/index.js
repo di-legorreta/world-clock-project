@@ -66,7 +66,11 @@ tokyoTimeEl.innerHTML = `${tokyoTime.format(
 )} <span class="ampm">${tokyoTime.format("A")}</span>`;
 
 function updateCity(event) {
-   const citytimeZone = event.target.value;
+   let citytimeZone = event.target.value;
+
+   if (citytimeZone === "current") {
+      citytimeZone = moment.tz.guess();
+   }
    const cleanName = citytimeZone.replace("_", " ").split("/")[1];
    const citytimeEl = moment().tz(citytimeZone);
    const replacecityEl = document.querySelector("#rows");
