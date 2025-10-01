@@ -15,13 +15,15 @@ body {
 
 body {
    margin: 0;
-   background: linear-gradient(180deg, #fff4fb, #ffe9f5), var(--screen);
+   background-image: url(../images/polka.png);
+   background-position: cover;
    color: var(--ink);
    font: 12px/1.35 "Press Start 2P", monospace;
 }
 
 a {
-   color: var(--bezel);
+   color: var(--ink);
+   font-style: italic;
 }
 
 .wrap {

@@ -84,6 +84,9 @@ function updateCity(event) {
             <div class="time">${citytimeEl.format(
                "h:mm:ss"
             )}<span class="ampm">${citytimeEl.format("A")}</span></div>
+            <a href="index.html" target="_top"
+            >Home Page</a
+         >
          </section>`;
 }
 
